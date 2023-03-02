@@ -9,8 +9,8 @@ const fetchBreedDescription = function(breedName, callback) {
     }
 
     const data = JSON.parse(body);
-    //console.log(data);
-    console.log(typeof body);
+    //console.log(data); //returns response body
+    // console.log(typeof body); //string
 
     const breed = data[0];
     if (breed) {
@@ -22,14 +22,5 @@ const fetchBreedDescription = function(breedName, callback) {
 
 };
 
-const breedName = process.argv[2]; // 2 means the second argument when you typing them out in the terminal
-
-fetchBreedDescription(breedName, (error, desc) => {
-  if (error) {
-    console.log('Error fetch details:', error);
-  } else {
-    console.log(desc);
-  }
-});
 
 module.exports = { fetchBreedDescription };
